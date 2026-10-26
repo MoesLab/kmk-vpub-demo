@@ -117,6 +117,8 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px s
 .dlg.bad h3 { color: #a22a1e; } .dlg.good h3 { color: #1f6b3f; }
 .tpbtn { background: var(--tp-dark); color: #fff; border: 0; min-width: 8em; height: 2.6em; font-size: 1.15em; font-weight: 600; letter-spacing: .04em; border-radius: .15em; }
 .kp-entry { font-family: var(--font-mono); font-size: 2.2em; letter-spacing: .25em; min-height: 1.3em; border-bottom: .06em solid #222; min-width: 6em; }
+.kp-hint { font-size: 1.15em; color: #3c4c5e; margin-top: -.4em; }
+.kp-hint b { color: #1b5faa; }
 .kp { display: grid; grid-template-columns: repeat(3, 5.4em); gap: .25em; background: #2f3337; padding: .3em; }
 .kp button { height: 3.6em; background: #4a5056; color: #fff; border: 0; font-size: 1.15em; font-weight: 600; }
 .kp button:active { background: #6b737a; }
@@ -762,7 +764,7 @@ function renderPanel() {
     h += '</div>';
   }
   if (ui.kp !== null) {
-    h += `<div class="overlay"><div class="dlg"><h3>Manual Member Entry</h3><div class="kp-entry">${ui.kp || '&nbsp;'}</div>
+    h += `<div class="overlay"><div class="dlg"><h3>Manual Member Entry</h3><div class="kp-entry">${ui.kp || '&nbsp;'}</div><div class="kp-hint">Demo member ID: <b>777</b> · expired: 18780</div>
       <div class="kp">${['1','2','3','4','5','6','7','8','9','Clear','0','Back'].map(k => `<button data-key="${k}">${k}</button>`).join('')}</div>
       <div class="row"><button class="tpbtn" data-act="kpcancel" style="background:#7b847e">Cancel</button><button class="tpbtn" data-act="kpok">OK</button></div></div></div>`;
   }
