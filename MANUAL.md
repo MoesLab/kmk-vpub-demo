@@ -71,6 +71,7 @@ The demo opens with Storefronts C and E occupied, Storefront F and Workspace 6 c
 | 3790 | Access Granted (The Moon and Horse) |
 | 1021 | Access Granted (The Crown and Firkin) |
 | 777 | Access Granted (The Fox and Fiddle) |
+| 001, 011, 111, 222, 333 | Access Granted (keypad demo IDs; leading zeros are fine) |
 | 18780 | Access Declined: membership expired |
 | 24235 | Access Declined: membership expired |
 | 4021 | Access Declined: already renting Storefront C |

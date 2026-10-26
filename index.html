@@ -360,7 +360,9 @@ const HOUSE_ITEMS = [{UPC:"06501056493",VENDOR:"House",PRODUCT:"Bottled Water 25
 const KNOWN = {
   3790:["The Moon and Horse","20270829"], 1021:["The Crown and Firkin","20271231"], 4021:["The Earl's Penguin","20280115"],
   5150:["The Bull and Rooster","20270601"], 777:["The Fox and Fiddle","20290310"], 18780:["The Bride and Apple","20221113"],
-  24235:["The Milliner's Pirate","20221124"] };
+  24235:["The Milliner's Pirate","20221124"],
+  1:["The Copper Kettle","20281231"], 11:["The Lamb and Flag","20281231"], 111:["The Royal Oak","20281231"],
+  222:["The Red Lion","20281231"], 333:["The White Hart","20281231"] };
 const ADJ = ["Red","Golden","Laughing","Drunken","Royal","Black","Silver","Jolly","Crooked","Merry","Wandering","Old"];
 const NOUN = ["Lion","Swan","Anchor","Badger","Kettle","Lantern","Stag","Plough","Mermaid","Bell","Harp","Ferret"];
 function queryID(id) {
@@ -764,7 +766,7 @@ function renderPanel() {
     h += '</div>';
   }
   if (ui.kp !== null) {
-    h += `<div class="overlay"><div class="dlg"><h3>Manual Member Entry</h3><div class="kp-entry">${ui.kp || '&nbsp;'}</div><div class="kp-hint">Demo member ID: <b>777</b> · expired: 18780</div>
+    h += `<div class="overlay"><div class="dlg"><h3>Manual Member Entry</h3><div class="kp-entry">${ui.kp || '&nbsp;'}</div><div class="kp-hint">Demo IDs: <b>111</b>, <b>222</b>, <b>333</b>, <b>001</b>, <b>011</b> · expired: 18780</div>
       <div class="kp">${['1','2','3','4','5','6','7','8','9','Clear','0','Back'].map(k => `<button data-key="${k}">${k}</button>`).join('')}</div>
       <div class="row"><button class="tpbtn" data-act="kpcancel" style="background:#7b847e">Cancel</button><button class="tpbtn" data-act="kpok">OK</button></div></div></div>`;
   }
@@ -938,7 +940,7 @@ function tap(id) {
 }
 document.getElementById('tapBtn').addEventListener('click', () => tap(document.getElementById('cardId').value));
 document.getElementById('cardId').addEventListener('keydown', e => { if (e.key === 'Enter') tap(e.target.value); });
-const CHIPS = [[3790,'valid'],[1021,'valid'],[777,'valid'],[18780,'expired'],[24235,'expired'],[4021,'in use']];
+const CHIPS = [[111,'valid'],[222,'valid'],[3790,'valid'],[18780,'expired'],[24235,'expired'],[4021,'in use']];
 document.getElementById('memberChips').innerHTML = CHIPS.map(([id, n]) => `<button class="chip" data-id="${id}">${id} <small>${n}</small></button>`).join('');
 document.getElementById('memberChips').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { document.getElementById('cardId').value = b.dataset.id; tap(b.dataset.id); } });
 document.getElementById('speedSeg').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { S.speed = +b.dataset.s; renderChrome(); } });
