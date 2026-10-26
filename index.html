@@ -71,6 +71,10 @@ button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px s
 .top { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: end; justify-content: space-between; }
 .brand h1 { font-family: var(--font-display); font-weight: 700; font-size: 30px; letter-spacing: .01em; margin: 0; line-height: 1.05; text-wrap: balance; }
 .brand p { margin: 4px 0 0; color: var(--muted); max-width: 68ch; }
+.titlerow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.byline { font-family: var(--font-display); font-weight: 600; font-size: 16px; letter-spacing: .04em; color: var(--accent); margin-top: 2px; }
+.btn.manual { text-decoration: none; color: var(--accent); border-color: var(--accent); background: var(--surface); font-size: 14px; }
+.btn.manual:hover { background: var(--accent); color: var(--accent-ink); }
 .clockbox { font-family: var(--font-mono); text-align: right; font-variant-numeric: tabular-nums; }
 .clockbox .t { font-size: 22px; font-weight: 600; }
 .clockbox .d { color: var(--muted); font-size: 13px; }
@@ -227,7 +231,8 @@ footer { color: var(--muted); font-size: 13px; text-align: center; }
 <div class="wrap">
   <header class="top">
     <div class="brand">
-      <h1>Kensington Modular Kitchens · vPub Control</h1>
+      <div class="titlerow"><h1>Kensington Modular Kitchens · vPub Control</h1><a class="btn manual" href="https://github.com/MoesLab/kmk-vpub-demo/blob/main/MANUAL.md" target="_blank" rel="noopener">User manual ↗</a></div>
+      <div class="byline">Moe Azizi · Crestron Certified Programmer</div>
       <p>Six-storefront Crestron control system: member login, space rental, workspace partitions and fans, retail shopping and POS. Tap a member card below to start.</p>
     </div>
     <div class="clockbox">
